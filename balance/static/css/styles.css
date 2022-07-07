@@ -23,7 +23,6 @@ main {
 
 table.paper {
     width: 100%;
-  
 }
 
 .titulo-tabla{
@@ -33,6 +32,12 @@ table.paper {
 
 .numero{
     text-align: right;
+}
+
+table.paper.error {
+    font-size: small;
+    padding-left: 40px;
+    color: #990000;
 }
 
 .pie-de-pagina{
