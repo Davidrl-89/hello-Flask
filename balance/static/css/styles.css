@@ -30,3 +30,13 @@ table.paper {
     border-bottom: #19a187 1px solid;
     text-align: left;
 }
+
+.numero{
+    text-align: right;
+}
+
+.pie-de-pagina{
+    margin-top: 40px;
+    padding: 20px;
+    border-top: solid 1px #b8174c;
+}

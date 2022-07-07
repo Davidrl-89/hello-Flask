@@ -24,14 +24,14 @@
         <th class="titulo-tabla">Fecha</th>
         <th class="titulo-tabla">Concepto</th>
         <th class="titulo-tabla">Tipo</th>
-        <th class="titulo-tabla">Cantidad</th>
+        <th class="titulo-tabla numero">Cantidad</th>
       </tr>
       {% for mov in movs %}
       <tr>
         <td>{{ mov.fecha }}</td>
         <td>{{ mov.concepto }}</td>
         <td>{{ mov.tipo }}</td>
-        <td>{{ mov.cantidad }}</td>
+        <td class="numero">{{ mov.cantidad }}</td>
       </tr>
       {% endfor %}
     </table>
