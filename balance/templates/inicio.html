@@ -30,7 +30,13 @@
       <tr>
         <td>{{ mov.fecha }}</td>
         <td>{{ mov.concepto }}</td>
-        <td>{{ mov.tipo }}</td>
+        <td>
+          {% if mov.tipo == 'I' %}
+            Ingreso
+          {% else %}
+            Gasto
+          {% endif %}
+        </td>
         <td class="numero">{{ mov.cantidad }}</td>
       </tr>
       {% endfor %}
