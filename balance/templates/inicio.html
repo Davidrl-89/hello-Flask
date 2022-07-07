@@ -1,25 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balance App</title>
-    <link rel="stylesheet" href="static/css/flat-remix.ccs">
-    <link rel="stylesheet" href="static/css/styles.css">
-</head>
+   {% extends "base.html" %}
 
-<body>
-  <header>
-    Balance de movimientos
-  </header>  
+   {% block head_title %}
+   {{ super() }}: inicio
+   {% endblock %}
 
-  <nav>
-    Inicio | Nuevo 
-  </nav> 
+   {% block page_title %}
+      Listado de movimientos 
+   {% endblock %}
 
-  <main>
-    <table class="paper">
+   {% block contenido %}
+   {{ super() }}
+
+
+
+   <table class="paper">
       <tr>
         <th class="titulo-tabla">Fecha</th>
         <th class="titulo-tabla">Concepto</th>
@@ -62,8 +56,5 @@
       </tr>
       {% endif %}
     </table>
-  </main>
-
-  <footer class="pie-de-pagina">2022 Bootcamp Cero.</footer>
-</body>
-</html>
+    {% endblock %}
+ 
