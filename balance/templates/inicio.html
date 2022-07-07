@@ -26,20 +26,41 @@
         <th class="titulo-tabla">Tipo</th>
         <th class="titulo-tabla numero">Cantidad</th>
       </tr>
-      {% for mov in movs %}
+      {% if movs %}
+        {% for mov in movs %}
+        <tr>
+          <td>
+            {% if mov.fecha %}
+            {{ mov.fecha }}
+            {% else %}
+            ---
+            {% endif %}
+          </td>
+          <td>{{ mov.concepto }}</td>
+          <td>
+            {% if mov.tipo == 'I' %}
+             Ingreso
+            {% else %}
+             Gasto
+            {% endif %}
+          </td>
+          <td class="numero">{{ mov.cantidad }}</td>
+        </tr>
+        {% if mov.errores %}
+        <tr>
+          <td colspan="4" class="error">
+          {% for error in mov.errores %}
+            {{ error }}.
+          {% endfor %}
+          </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+      {% else %}
       <tr>
-        <td>{{ mov.fecha }}</td>
-        <td>{{ mov.concepto }}</td>
-        <td>
-          {% if mov.tipo == 'I' %}
-            Ingreso
-          {% else %}
-            Gasto
-          {% endif %}
-        </td>
-        <td class="numero">{{ mov.cantidad }}</td>
+        <td colspan="4" class="lista-vacia">No hay movimientos que mostar</td>
       </tr>
-      {% endfor %}
+      {% endif %}
     </table>
   </main>
 
