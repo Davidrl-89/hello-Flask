@@ -70,7 +70,6 @@ table.paper.error {
     display: inline-block;
     margin-right: 2rem;
     margin-bottom: .5rem;
-    
 }
 
 .campo-formulario input:not([type="radio"]) {
