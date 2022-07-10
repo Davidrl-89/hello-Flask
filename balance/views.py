@@ -1,4 +1,4 @@
-from flask import render_template, request
+from flask import render_template, request, redirect, url_for
 
 from . import app
 from .models import ListaMovimientos, Movimiento
@@ -23,7 +23,11 @@ def nuevo():
         nuevo_movimiento = Movimiento(datos)
         if len(nuevo_movimiento.errores) > 0:
             return f"Error en el nuevo movimiento. {nuevo_movimiento.errores}"
-        return f"He recibido los datos: {nuevo_movimiento}"
+        # guardar el movimiento
+        lista = ListaMovimientos()
+        lista.leer_archivo()
+        lista.agregar(nuevo_movimiento)
+        return redirect(url_for("home"))
 
 @app.route('/modificar')
 def actualizar():
