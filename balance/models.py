@@ -9,6 +9,9 @@ class Movimiento:
         self.errores = []
         try:
             self.fecha = date.fromisoformat(dic_datos["fecha"])
+            hoy = date.today()
+            if self.fecha > hoy:
+                self.errores.append("La fecha no puede ser futura")
         except ValueError:
             self.fecha = None
             self.errores.append("El formato de la fecha no es valido")
